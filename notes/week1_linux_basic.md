@@ -120,7 +120,6 @@ git push# 第1周学习笔记：Linux 基础 + Git 核心
 | \|   | 管道（连命令）| ls -l \| grep txt / ps -ef \| grep root |
 
 ### 4. Git 分支管理
-#### 4.1 核心命令
 | 命令                | 作用                  | 示例                  |
 |---------------------|-----------------------|-----------------------|
 | git branch          | 查看分支              | git branch            |
@@ -128,13 +127,4 @@ git push# 第1周学习笔记：Linux 基础 + Git 核心
 | git checkout 分支名 | 切换分支              | git checkout main     |
 | git checkout -b 分支名 | 新建并切换        | git checkout -b day2-notes |
 | git merge 分支名    | 合并分支              | git merge day2-notes  |
-
-#### 4.2 完整流程
-```bash
-cd /code/LLM-Inference-Tool
-git checkout -b day2-notes
-vim notes/week1_linux_basic.md
-git add . && git commit -m "feat: 第2天笔记"
-git checkout main && git merge day2-notes
-git push
 
