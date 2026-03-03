@@ -71,55 +71,6 @@
 | \|   | 管道（连命令）| ls -l \| grep txt / ps -ef \| grep root |
 
 ### 4. Git 分支管理
-#### 4.1 核心命令
-| 命令                | 作用                  | 示例                  |
-|---------------------|-----------------------|-----------------------|
-| git branch          | 查看分支              | git branch            |
-| git branch 分支名   | 新建分支              | git branch day2-notes |
-| git checkout 分支名 | 切换分支              | git checkout main     |
-| git checkout -b 分支名 | 新建并切换        | git checkout -b day2-notes |
-| git merge 分支名    | 合并分支              | git merge day2-notes  |
-
-#### 4.2 完整流程
-```bash
-cd /code/LLM-Inference-Tool
-git checkout -b day2-notes
-vim notes/week1_linux_basic.md
-git add . && git commit -m "feat: 第2天笔记"
-git checkout main && git merge day2-notes
-git push# 第1周学习笔记：Linux 基础 + Git 核心
-## 第2天（2026.3.4）：文件操作 + 查找工具 + 管道重定向 + Git 分支
-
-### 1. 文件/目录核心命令
-| 命令          | 作用                  | 示例                          |
-|---------------|-----------------------|-------------------------------|
-| mkdir         | 新建目录              | mkdir test_dir                |
-| cd            | 切换目录              | cd test_dir / cd .. / cd /    |
-| pwd           | 查看绝对路径          | pwd                           |
-| ls            | 列出内容              | ls -l（详情）/ ls -a（隐藏）  |
-| touch         | 新建空文件            | touch a.txt                   |
-| cp            | 复制文件/目录         | cp a.txt b.txt / cp -r dir1 dir2 |
-| mv            | 移动/重命名           | mv b.txt c.txt / mv c.txt /tmp |
-| rm            | 删除文件              | rm c.txt                      |
-| rm -rf        | 强制删除目录（高危）  | rm -rf test_dir               |
-
-### 2. 查找工具
-#### 2.1 find（找文件）
-- 语法：find 路径 -name "匹配规则"
-- 示例：find . -name "*.txt" / find /code -name "*.md"
-
-#### 2.2 grep（找内容）
-- 语法：grep "关键词" 文件名
-- 示例：grep "linux" *.txt / grep -n "root" /etc/passwd
-
-### 3. 管道 & 重定向
-| 符号 | 作用         | 示例                          |
-|------|--------------|-------------------------------|
-| >    | 覆盖写入     | ls -l > file_list.txt         |
-| >>   | 追加写入     | echo "新内容" >> file_list.txt|
-| \|   | 管道（连命令）| ls -l \| grep txt / ps -ef \| grep root |
-
-### 4. Git 分支管理
 | 命令                | 作用                  | 示例                  |
 |---------------------|-----------------------|-----------------------|
 | git branch          | 查看分支              | git branch            |
