@@ -3,8 +3,12 @@
 ### 1. 用户与组
 - useradd 用户名：创建用户
 - passwd 用户名：设置密码
+- exit 退出当前用户
+- whoima 查看当前用户
+- id 
 - groupadd 组名：创建组
 - usermod -aG 组名 用户名：将用户加入组
+- userdel 删除用户
 
 ### 2. 文件权限
 - ls -l：查看权限（rwx 对应读/写/执行）
