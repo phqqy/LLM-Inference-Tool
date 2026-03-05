@@ -123,3 +123,32 @@
 - 头文件加 #ifndef ... #define ... #endif 防止重复包含
 - 永远不在源码目录编译，保持代码干净
 - 所有练习统一放在 ~/LLM-Inference-Tool 仓库
+
+---
+
+## Day05 详细实操教程：Linux 软件安装 / 环境变量 / 压缩解压 + GDB 调试（适配 LLM-Inference-Tool）
+### 1. 软件安装（yum）
+- sudo yum install -y 软件名：一键安装，自动解决依赖
+- gcc --version / gdb --version：验证安装成功
+- 必须加 sudo 提权，避免权限错误
+### 2. 压缩解压
+- 压缩 .tar.gz：tar -zcvf 包名.tar.gz 目标
+- 解压 .tar.gz：tar -zxvf 包名.tar.gz
+- 压缩 .zip：zip 包名.zip 目标（目录加 -r）
+- 解压 .zip：unzip 包名.zip（指定目录加 -d）
+### 3. 环境变量（PATH）
+- echo $PATH：查看全局命令路径
+- export PATH=$PATH:路径：临时添加路径（重启失效）
+- ./程序名：运行当前目录下的程序（不在 PATH 时）
+- which 命令：查看命令的绝对路径
+### 4. GDB 调试
+- 编译前提：set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+- gdb ./程序名：启动调试
+- b 行号/函数名：设置断点
+- r：运行到断点
+- n：单步跳过函数
+- s：单步进入函数
+- p 变量名：打印变量值
+- bt：查看函数调用栈
+- c：继续运行
+- q：退出 GDB

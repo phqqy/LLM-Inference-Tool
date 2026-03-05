@@ -8,6 +8,9 @@ project(LLM_Inference_Demo)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# 添加调试信息（必须加，否则GDB无法调试）
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+
 # 包含头文件目录（告诉CMake去哪找hello.h）
 include_directories(include)
 
