@@ -1,0 +1,28 @@
+#!/bin/bash
+# LLM-Inference-Demo 启动脚本
+# 作用：后台运行llm_demo并记录日志
+
+# 执行的是你已经提前在下面目录下写好的程序，在当前目录下调用该shell会自动在后台执行
+# 如需中止程序请调用 ps -ef | grep 程序名 查询pid 然后用kill pid
+
+# 1. 进入编译目录（确保路径正确）
+BUILD_DIR="../cmake-demo/build" # （设置变量，等号两边无空格）
+cd ${BUILD_DIR} || exit 1
+
+
+# 2. 检查可执行文件是否存在
+if [ ! -f "llm_demo" ]; then
+  echo "Error: llm_demo not found! Please compile first."
+  exit 1
+fi
+
+
+# 3. 后台运行并记录日志
+LOG_FILE="llm_demo_$(date +%Y%m%d_%H%M%S).log"
+nohup ./llm_demo > ${LOG_FILE} 2>&1 &
+
+
+# 4. 输出PID和日志路径
+echo "LLM Demo started in background!"
+echo "PID: ${!}"
+echo "Log file: ${BUILD_DIR}/${LOG_FILE}"
